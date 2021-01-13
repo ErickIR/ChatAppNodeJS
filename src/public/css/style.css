@@ -214,7 +214,7 @@ p .text {
 }
 
 .modal-content{
-  background-color: #292c32;
+  background-color: var(--background);
 }
 
 .btn-dark {
