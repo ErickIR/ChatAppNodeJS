@@ -3,12 +3,13 @@ const chatMessages = document.querySelector('.chat-messages');
 const socket = io();
 const usersList = document.getElementById('users');
 const roomName = document.getElementById('room-name');
+const userName = document.getElementById("username")
 
 const URL = window.location.href;
 const { username, room } = getParams(URL);
-
-// Join ChatRoom
+// Join ChatRoom and Send UserName to DOM 
 socket.emit('joinRoom', { username, room });
+outputUserName(username);
 
 // Get room and users
 socket.on('roomUsers', ({ room, users }) => {
@@ -36,6 +37,10 @@ chatForm.addEventListener('submit', (event) => {
     inputElement.value = '';
     inputElement.focus();
 });
+
+function outputUserName(username){
+    userName.value = username;
+}
 
 // Output message to DOM
 function outputMessage(message) {
@@ -77,3 +82,4 @@ function getParams(url) {
     console.log(params);
     return params;
 }
+

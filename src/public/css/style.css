@@ -185,7 +185,12 @@ p .text {
   width: 100%;
 }
 
-.join-main .btn {
+.join-main .btn-dark{
+  margin-top: 20px;
+  width: 100%;
+}
+
+.join-main .btn{
   margin-top: 20px;
   width: 100%;
 }
@@ -197,4 +202,30 @@ p .text {
   .chat-sidebar {
     display: none;
   }
+}
+
+.modal-body{
+  text-align: center;
+  background-color: var(--dark-color-b);
+}
+.modal-header{
+  background-color: var(--dark-color-a);
+  color: white;
+}
+
+.modal-content{
+  background-color: var(--background);
+}
+
+.btn-dark {
+  cursor: pointer;
+  padding: 5px 15px;
+  background: var(--dark-color-a);
+  color: #fff;
+  border: 0;
+  font-size: 17px;
+}
+
+.modal-body .form-control {
+  margin-bottom: 2%;
 }

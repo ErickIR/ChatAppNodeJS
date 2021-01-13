@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Chat App</title>
 </head>
 
@@ -19,9 +22,9 @@
             <div class="chat-sidebar">
                 <h3><i class="fas fa-comments"></i> Room Name:</h3>
                 <h2 id="room-name"></h2>
-                <h3><i class="fas fa-users"></i> Users</h3>
+             <h3><a type ="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fas fa-arrow-right"></i> Change Room</a></h3>
+            <h3><i class="fas fa-users"></i> Users</h3>
                 <ul id="users">
-
                 </ul>
             </div>
             <div class="chat-messages">
@@ -35,6 +38,37 @@
             </form>
         </div>
     </div>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Change Room</h4>
+            </div>
+            <div class="modal-body">
+                <form action="chat.html">
+                <input type="text" name="username" id="username" style="display: none;" value="">
+                <div class="form-control">
+                        <label for="room">Room:</label>
+                        <select name="room" id="room">
+                            <option value="Games">Games</option>
+							<option value="Programming">Programming</option>
+							<option value="Anime">Anime</option>
+							<option value="Movies">Movies</option>
+                        </select>
+                    </div>
+                        <button type="submit" class="btn-dark">Join Chat</button>
+                    
+                </form>
+                    
+              
+            </div>
+          </div>
+          
+        </div>
+      </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="js/main.js"></script>
 </body>
